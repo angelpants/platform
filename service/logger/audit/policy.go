@@ -2,8 +2,10 @@ package audit
 
 import (
 	"context"
-	"encoding/json"
 	"time"
+
+	"google.golang.org/protobuf/encoding/protojson"
+	"google.golang.org/protobuf/reflect/protoreflect"
 )
 
 type PolicyEventParams struct {
@@ -27,12 +29,14 @@ func CreatePolicyEvent(ctx context.Context, isSuccess bool, params PolicyEventPa
 	var diff []DiffEntry
 	if params.ActionType == ActionTypeUpdate && isSuccess {
 		// marshal interface to byte string
-		original, err := json.Marshal(params.Original)
+		// original, err := json.Marshal(params.Original)
+		original, err := protojson.Marshal(params.Original.(protoreflect.ProtoMessage))
 		if err != nil {
 			return nil, err
 		}
 
-		updated, err := json.Marshal(params.Updated)
+		// updated, err := json.Marshal(params.Updated)
+		updated, err := protojson.Marshal(params.Updated.(protoreflect.ProtoMessage))
 		if err != nil {
 			return nil, err
 		}
