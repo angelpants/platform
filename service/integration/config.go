@@ -13,7 +13,7 @@ func init() {
 
 	Config.DB.User = "postgres"
 	Config.DB.Password = "postgres"
-	Config.DB.Host = "localhost"
+	Config.DB.Host = "keycloak"
 	Config.DB.Port = 5432
 	Config.DB.Database = "opentdf-test"
 }

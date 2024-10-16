@@ -23,7 +23,7 @@ services:
         legacy: true
   entityresolution:
     log_level: info
-    url: http://localhost:8888/auth
+    url: http://keycloak:8888/auth
     clientid: 'tdf-entity-resolution'
     clientsecret: 'secret'
     realm: 'opentdf'
@@ -37,8 +37,8 @@ server:
     enabled: true
     enforceDPoP: false
     public_client_id: 'opentdf-public'
-    audience: 'http://localhost:8080'
-    issuer: http://localhost:8888/auth/realms/opentdf
+    audience: 'http://keycloak:8080'
+    issuer: http://keycloak:8888/auth/realms/opentdf
     policy:
       ## Default policy for all requests
       default: #"role:standard"

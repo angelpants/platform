@@ -23,7 +23,7 @@ func NewRegistration() serviceregistry.Registration {
 			// FIXME msg="mismatched key access url" keyAccessURL=http://localhost:9000 kasURL=https://:9000
 			hostWithPort := srp.OTDF.HTTPServer.Addr
 			if strings.HasPrefix(hostWithPort, ":") {
-				hostWithPort = "localhost" + hostWithPort
+				hostWithPort = "keycloak" + hostWithPort
 			}
 			kasURLString := "http://" + hostWithPort
 			kasURI, err := url.Parse(kasURLString)
