@@ -63,7 +63,7 @@ type PgxIface interface {
 }
 
 type Config struct {
-	Host          string `mapstructure:"host" json:"host" default:"localhost"`
+	Host          string `mapstructure:"host" json:"host" default:"opentdfdb"`
 	Port          int    `mapstructure:"port" json:"port" default:"5432"`
 	Database      string `mapstructure:"database" json:"database" default:"opentdf"`
 	User          string `mapstructure:"user" json:"user" default:"postgres"`

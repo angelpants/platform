@@ -122,7 +122,7 @@ func LoadKeycloakData(file string) {
 }
 
 func init() {
-	provisionKeycloakCmd.Flags().StringP(provKcEndpointFlag, "e", "http://localhost:8888/auth", "Keycloak endpoint")
+	provisionKeycloakCmd.Flags().StringP(provKcEndpointFlag, "e", "http://keycloak:8888/auth", "Keycloak endpoint")
 	provisionKeycloakCmd.Flags().StringP(provKcUsernameFlag, "u", "admin", "Keycloak username")
 	provisionKeycloakCmd.Flags().StringP(provKcPasswordFlag, "p", "changeme", "Keycloak password")
 	provisionKeycloakCmd.Flags().StringP(provKcFilenameFlag, "f", provKeycloakFilename, "Keycloak config file")
