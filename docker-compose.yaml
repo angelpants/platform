@@ -78,8 +78,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    ports:
-      - "5432:5432"
   goservice:
     image: golang:1.22
     container_name: goservice
@@ -90,6 +88,8 @@ services:
       - keycloak
       - keycloakdb
       - opentdfdb
+    ports:
+      - "8080:8080"
     volumes:
       - ${PWD}:/app:ro  # Mount the current directory to /app with read-only access
       - go-modules:/go/pkg/mod  # Cache Go modules
